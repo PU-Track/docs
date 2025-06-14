@@ -179,16 +179,22 @@
       <img src="./attachment/iot_sensor.png" alt="Sensor Diagram"
         style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 6px;">
     </div>
-    <p>
-      - The ESP32 module collects data every 5 minutes from the DS18B20, DHT22, and RFID-RC522 sensors.<br>
-      - These sensor values are formatted as JSON and transmitted to <strong>both the MQTT broker (HiveMQ) and Firebase Realtime
-      Database</strong>.<br>
-      - The MQTT broker <strong>instantly forwards the real-time data to the iOS app</strong>, enabling live monitoring.<br>
-      - Meanwhile, the data stored in Firebase will later be sent to the backend server for logging and further
-      analysis.<br>
-      ++ ESP32 was chosen over a traditional Arduino due to its built-in Wi-Fi capabilities, lower power consumption, and
-      suitability for wireless IoT communication in long-term deployments.
-    </p>
+    <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
+      <li>The ESP32 module collects data every 5 minutes from the DS18B20, DHT22, and RFID-RC522 sensors.</li>
+      <li>These sensor values are formatted as JSON and transmitted to <strong>both the MQTT broker (HiveMQ) and
+          Firebase Realtime Database</strong>.</li>
+      <li>The MQTT broker <strong>instantly forwards the real-time data to the iOS app</strong>, enabling live
+        monitoring.</li>
+      <li>The data stored in Firebase is later sent to the backend server for logging and further analysis.</li>
+      
+      <li style="list-style-type: none; margin-top: 10px;">
+        <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
+          <strong>Why choose ESP32 over Arduino?</strong><br>
+          ESP32 was chosen over a traditional Arduino due to its built-in Wi-Fi capabilities, lower power consumption,
+          and suitability for wireless IoT communication in long-term deployments.
+        </div>
+      </li>
+    </ul>
 
     <br>
 
