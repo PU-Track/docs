@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <head>
   <meta charset="UTF-8">
@@ -107,7 +109,6 @@
       </div>
     </div>
   </div>
-
   <hr>
 
   <!-- 프로젝트 설명 -->
@@ -119,6 +120,9 @@
       Firebase, and analyze with ML models.<br>
       📱 <strong>Interface:</strong> iOS app shows real-time posture status and alerts.
     </p>
+
+    <br>
+
     <h3>👤 User Flow</h3>
     <p>
     <ol>
@@ -127,6 +131,8 @@
       <li>3️ Caregivers can access three core features:</li>
     </ol>
     </p>
+
+    <br>
 
     <h3>📌 Main Features</h3>
     <ol>
@@ -164,7 +170,7 @@
     <h3>🔍 Technical Details</h3>
     <div style="text-align: center; margin-bottom: 20px;">
       <img src="./attachment/service_architecture.png" alt="System Architecture"
-        style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+        style="max-width: 100%; height: auto; border: 0px solid #ccc; border-radius: 8px;">
       <p style="font-size: 0.95em; color: #555;">▲ Overall System Architecture</p>
     </div>
 
@@ -177,7 +183,7 @@
         style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 6px;">
 
       <img src="./attachment/iot_sensor.png" alt="Sensor Diagram"
-        style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 6px;">
+        style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
     </div>
     <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
       <li>The ESP32 module collects data every 5 minutes from the DS18B20, DHT22, and RFID-RC522 sensors.</li>
@@ -186,7 +192,7 @@
       <li>The MQTT broker <strong>instantly forwards the real-time data to the iOS app</strong>, enabling live
         monitoring.</li>
       <li>The data stored in Firebase is later sent to the backend server for logging and further analysis.</li>
-      
+
       <li style="list-style-type: none; margin-top: 10px;">
         <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
           <strong>Why choose ESP32 over Arduino?</strong><br>
@@ -199,47 +205,97 @@
     <br>
 
     <h4>2️⃣ Machine Learning (Random Forest)</h4>
-    <p>
-      - A Random Forest model is trained on labeled data where each entry contains:<br>
-      <code>{last posture change time, temperature delta, ambient humidity, sleep state}</code><br>
-      - The model predicts the time interval until the next posture change.<br>
-      - Inference is executed in the backend (FastAPI), triggered by a posture tagging event.
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
+      <img src="./attachment/MLcode.png" alt="ML code"
+        style="max-width: 70%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+    </div>
+
+    <p style="text-align: center; font-size: 1.1em; margin: 1.5em 0;">
+      \[
+      \frac{1}{M} \sum_{i=t-M}^{t} |\Delta T_i| < \varepsilon, \quad \text{with } M=5,\ \varepsilon=0.1^\circ C \] 
     </p>
+
+    <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
+      <li>A Random Forest model was trained using sensor-derived features, including recent temperature stability
+        patterns, to predict the optimal timing for the next posture change.</li>
+      <li>The concept of "near-high-temperature stability" was used to identify sustained pressure risk conditions
+        based
+        on minimal temperature variation across recent intervals.</li>
+      <li>Model inference is executed in the backend (FastAPI) whenever a new posture is tagged.</li>
+
+      <li style="list-style-type: none; margin-top: 10px;">
+        <div style="border: 1px solid #ccc; background-color: #f0fdf4; padding: 12px 15px; border-radius: 10px;">
+          <strong>Why Random Forest?</strong><br>
+          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
+            <img src="./attachment/ML_performance.png" alt="IoT Architecture"
+              style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+
+            <img src="./attachment/ML_graph.png" alt="Sensor Diagram"
+              style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+          </div>
+          To provide personalized predictions for a diverse patient population,
+          we explored alternative models such as LightGBM.
+          However, it exhibited inferior performance in our evaluation compared to Random Forest.
+          Random Forest was ultimately selected due to its strong performance on small-to-medium-sized datasets,
+          robustness to noise, and ability to model non-linear interactions across multiple sensor inputs
+          while minimizing overfitting through its ensemble structure.
+        </div>
+      </li>
+    </ul>
 
     <br>
 
     <h4>3️⃣ Daily Summary via LLM</h4>
-    <p>
-      - When the patient enters sleep mode, the system generates a prompt using that day's data:<br>
-      <code>“Summarize the patient's mobility and environment on June 14 based on…”</code><br>
-      - The prompt includes:
-    <ul>
-      <li>• Temperature and humidity logs</li>
-      <li>• Posture change count and timings</li>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
+      <img src="./attachment/LLMcode.png" alt="LLM code"
+        style="max-width: 70%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+    </div>
+
+    <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
+      <li>When the patient enters sleep mode, the system generates a prompt using that day's data:</li>
+      <li>
+        <code>“Summarize the patient's mobility and environment on June 14 based on…”</code>
+      </li>
+      <li>The prompt includes:</li>
+      <ul>
+        <li>• Temperature and humidity logs</li>
+        <li>• Posture change count and timings</li>
+      </ul>
+      <li>The LLM generates a natural-language summary (e.g., “The patient remained inactive for over 4 hours...”).
+      </li>
+
+      <li style="list-style-type: none; margin-top: 10px;">
+        <div style="border: 1px solid #ccc; background-color: #fef9c3; padding: 12px 15px; border-radius: 10px;">
+          <strong>Why use an LLM?</strong><br>
+          Even for trained medical professionals,
+          interpreting raw numerical logs alone can be challenging
+          when assessing a patient’s condition.
+          By leveraging a Large Language Model (LLM),
+          we transform structured sensor data into intuitive,
+          human-readable summaries that enhance situational awareness and clinical decision-making.
+        </div>
+      </li>
     </ul>
-    - The LLM generates a natural-language summary (e.g., “The patient remained inactive for over 4 hours...”).
-    </p>
-  </div>
 
-  <br>
+    <br>
 
-  <h2>❸ Presentation Link</h2>
-  <div class="section">
-    <ul>
-      <li><a href="./pdf/first.pdf" target="_blank">1️⃣ First Presentation</a></li>
-      <li><a href="./pdf/middle.pdf" target="_blank">2️⃣ Middle Presentation</a></li>
-      <li><a href="./pdf/sogangcontest.pdf" target="_blank">🎉 Sogang Contest Poster</a></li>
-      <li><a href="./pdf/thesis.pdf" target="_blank">📄 KCC Thesis</a></li>
-    </ul>
-  </div>
+    <h2>❸ Presentation Link</h2>
+    <div class="section">
+      <ul>
+        <li><a href="./pdf/first.pdf" target="_blank">1️⃣ First Presentation</a></li>
+        <li><a href="./pdf/middle.pdf" target="_blank">2️⃣ Middle Presentation</a></li>
+        <li><a href="./pdf/sogangcontest.pdf" target="_blank">🎉 Sogang Contest Poster</a></li>
+        <li><a href="./pdf/thesis.pdf" target="_blank">📄 KCC Thesis</a></li>
+      </ul>
+    </div>
 
-  <h2>❹ Demo Video</h2>
-  <div class="section">
-    <video controls>
-      <source src="./pdf/demoVideo.mp4" type="video/mp4">
-      현재 브라우저는 비디오 태그를 지원하지 않습니다.
-    </video>
-  </div>
+    <h2>❹ Demo Video</h2>
+    <div class="section">
+      <video controls>
+        <source src="./pdf/demoVideo.mp4" type="video/mp4">
+        현재 브라우저는 비디오 태그를 지원하지 않습니다.
+      </video>
+    </div>
 
 </body>
 
