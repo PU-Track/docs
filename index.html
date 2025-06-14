@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <title>PU-Track</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>🩺 PU-Track: Smart System for Predicting Postural Change Intervals to Prevent Pressure Ulcers</h1>
+  <h1>Hi, WE ARE PU-Track</h1>
+  <h1>Smart System for Predicting Postural Change Intervals to Prevent Pressure Ulcers</h1>
 
   <div class="section">
-    <p><strong>PU-Track</strong> is a smart healthcare system designed to prevent pressure ulcers by predicting patient posture change intervals using IoT-based temperature sensing and machine learning models.</p>
-    <p>This project was initiated to enhance both caregiving efficiency and patient safety in clinical environments.</p>
+    <p><strong>PU-Track</strong> is a smart healthcare service that supports pressure ulcer prevention through posture
+      prediction with IoT, ML and LLM</p>
   </div>
 
-  <h2>❶ Project Info</h2>
+  <!-- 1. 프로젝트 & 팀 개요 -->
+  <h2>❶ Info</h2>
   <div class="section">
     <ul>
-      <li><strong>Team Members</strong></li>
-      <ul>
-        <li><strong>Jiwon Shin (Team Lead)</strong><br>
-          <a href="https://github.com/ena-isme" target="_blank">@ena-isme</a><br>
-          • Implemented ESP32-based IoT system<br>
-          • Developed iOS application with MQTT live data<br>
-          • Led mobile UI/UX design<br>
-          • Managed overall planning and scheduling
-        </li><br>
-        <li><strong>Jungyeon Lim (Team Member)</strong><br>
-          <a href="https://github.com/13155a1" target="_blank">@13155a1</a><br>
-          • Built Firebase backend and real-time DB<br>
-          • Developed machine learning prediction model<br>
-          • Integrated patient analysis logic with LLM
-        </li>
-      </ul>
-      <li><strong>GitHub Repository:</strong> <a href="https://github.com/PU-Track" target="_blank">PU-Track GitHub</a></li>
-      <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Python, ESP32, Firebase, MQTT, Random Forest, Swift, LLM</li>
+      <li><strong>Project</strong></li>
+      <li>📌 <strong>Affiliation:</strong> Capstone Design II, Department of Computer Science, Sogang University (Spring
+        2025)</li>
+      <li>🏆 <strong>Recognitions:</strong>
+        <ul>
+          <li>• Paper accepted at <strong>2025 Korea Computer Congress (KCC)</strong> - IoT Track</li>
+          <li>• <strong>4th prize</strong> at 2025-1 Sogang Capstone Design Competition</li>
+        </ul>
+      </li>
+      <li>🔗 <strong>GitHub Repository:</strong>
+        <a href="https://github.com/PU-Track" target="_blank">PU-Track GitHub</a>
+      </li>
+      <li>🛠️ <strong>Tech Stack:</strong> HTML, CSS, JavaScript, Python, ESP32, Firebase, MQTT, Random Forest, Swift, SwiftUI,
+        LLM</li>
     </ul>
+
+    <h3><strong>Team</strong></h3>
+    <div class="member-container">
+      <div class="member">
+        <img src="./attachment/jiwon.png" alt="Jiwon Shin" class="member-photo">
+        <strong>Jiwon Shin</strong> (Lead)
+        <a href="https://github.com/ena-isme" target="_blank"> @ena-isme</a><br>
+        • Implemented ESP32-based IoT system<br>
+        • Developed iOS application with MQTT live data<br>
+        • Led mobile UI/UX design<br>
+        • Managed overall project planning
+      </div>
+
+      <div class="member">
+        <img src="./attachment/jeongyeon.png" alt="Jeongyeon Lim" class="member-photo">
+        <strong>Jeongyeon Lim</strong>
+        <a href="https://github.com/13155a1" target="_blank"> @13155a1</a><br>
+        • Built Firebase backend and real-time database<br>
+        • Developed machine learning prediction model<br>
+        • Integrated patient data analysis logic with LLM
+      </div>
+    </div>
   </div>
 
   <hr>
@@ -43,8 +65,9 @@
   <h2>❷ Project Overview (Detailed)</h2>
   <div class="section">
     <p>🧠 <strong>Goal:</strong> Predict when to change a patient’s posture to prevent pressure ulcers.<br>
-    📡 <strong>How:</strong> Use temperature sensors (DS18B20, DHT22) with ESP32 to collect data, send via MQTT to Firebase, and analyze with ML models.<br>
-    📱 <strong>Interface:</strong> iOS app shows real-time posture status and alerts.</p>
+      📡 <strong>How:</strong> Use temperature sensors (DS18B20, DHT22) with ESP32 to collect data, send via MQTT to
+      Firebase, and analyze with ML models.<br>
+      📱 <strong>Interface:</strong> iOS app shows real-time posture status and alerts.</p>
     <!-- 상세 설명 -->
   </div>
 
@@ -67,4 +90,5 @@
   </div>
 
 </body>
+
 </html>
