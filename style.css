@@ -61,3 +61,25 @@ video {
   border-radius: 0;
   margin-top: 15px;
 }
+
+/* 멤버 가로 정렬 추가 */
+.member-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.member {
+  flex: 1;
+  min-width: 300px;
+}
+
+.member-photo {
+  width: 70px;       
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: block;
+}
