@@ -22,109 +22,39 @@
     <ul>
       <!-- 프로젝트 개요 -->
       <li><strong>Affiliation</strong><br />Capstone Design II, Department of Computer Science and Engineering, Sogang
-        University (Spring
-        2025)</li>
+        University</li>
       <br />
       <li><strong>Recognitions</strong>
-        <ul style="padding-left: 1.5em;">
-          <li>❶ Paper accepted at 2025 Korea Computer Congress (KCC) - IoT Track</li>
-          <li>❷ 4th Prize at 2025-1 Sogang Capstone Design Competition</li>
-          <li>❸ Qualified for the finals of K-Hackton 2025 ~ ING</li>
-        </ul>
-      </li>
+      <li>• Paper accepted at 2025 Korea Computer Congress (KCC) - IoT Track</li>
+      <li>• 4th Prize at 2025-1 Sogang Capstone Design Competition</li>
+      <li>• Qualified for the finals of K-Hackton 2025 ~ ING</li>
+    </ul>
+    </li>
     </ul>
   </div>
 
   <hr>
-  <br>
 
-  <!-- 팀 개요 -->
-  <h3><strong>Team</strong></h3>
-  <div class="member-container">
-    <div class="member">
-      <img src="./attachment/jiwon.png" alt="Jiwon Shin" class="member-photo"><br>
-      <strong>Jiwon Shin</strong> (Leader) - IoT & Front<br>
-      <a href="https://github.com/ena-isme" target="_blank"> @ena-isme</a><br>
-      <span class="function-badge">Web</span>
-      <span class="function-badge">Mobile</span>
-      <span class="function-badge">IoT</span>
-      <span class="function-badge">Docs</span>
-    </div>
-
-    <div class="member">
-      <img src="./attachment/jeongyeon.png" alt="Jeongyeon Lim" class="member-photo"><br>
-      <strong>Jeongyeon Lim</strong> - Back<br>
-      <a href="https://github.com/13155a1" target="_blank"> @13155a1</a><br>
-      <span class="function-badge">Server</span>
-      <span class="function-badge">ML</span>
-    </div>
-  </div>
-
-  <hr>
-  <br />
-
-  <!-- Tech Stack Section -->
-  <div class="section">
-    <ul>
-      <li>🔗 <a href="https://github.com/PU-Track" target="_blank"><strong>GitHub Organization</strong></a></li>
-        <ul style="display: table; margin: 0 auto; text-align: center;">
-          <li><a href="https://github.com/PU-Track/client" target="_blank">Web (User Registration)</a>
-            <br>
-            <span class="tech-badge">HTML</span>
-            <span class="tech-badge">CSS</span>
-            <span class="tech-badge">JavaScript</span>
-            <span class="tech-badge">Vite</span>
-          </li>
-          <li><a href="https://github.com/PU-Track/iOS" target="_blank">Mobile (Service App)</a>
-            <br>
-            <span class="tech-badge">Swift</span>
-            <span class="tech-badge">SwiftUI</span>
-            <span class="tech-badge">MQTT</span>
-            <span class="tech-badge">Firebase</span>
-          </li>
-          <li><a href="https://github.com/PU-Track/iot" target="_blank">IoT (ESP32 Firmware)</a>
-            <br>
-            <span class="tech-badge">C++</span>
-            <span class="tech-badge">ESP32</span>
-            <span class="tech-badge">MQTT</span>
-          </li>
-          <li><a href="https://github.com/PU-Track/server" target="_blank">Backend (API Server)</a>
-            <br>
-            <span class="tech-badge">JavaSpring</span>
-            <span class="tech-badge">Docker</span>
-            <span class="tech-badge">FastAPI</span>
-            <span class="tech-badge">Firebase Admin SDK</span>
-          </li>
-          <li><a href="https://github.com/PU-Track/model" target="_blank">Model (ML Inference)</a>
-            <br>
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">Docker</span>
-            <span class="tech-badge">scikit-learn</span>
-            <span class="tech-badge">Random Forest</span>
-          </li>
-          <li><a href="https://github.com/PU-Track/docs" target="_blank">Docs (Documentation)</a>
-            <br>
-            <span class="tech-badge">Markdown</span>
-            <span class="tech-badge">HTML</span>
-            <span class="tech-badge">CSS</span>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <!-- 프로젝트 설명 -->
-  <h2>❷ Project Overview (Detailed)</h2>
+  <!-- 프로젝트 이유 -->
+  <h2>Motivation</h2>
   <div class="section">
     <p>
-      🧠 <strong>Goal:</strong> Predict when to change a patient’s posture to prevent pressure ulcers.<br>
-      📡 <strong>How:</strong> Use temperature sensors (DS18B20, DHT22) with ESP32 to collect data, send via MQTT to
-      Firebase, and analyze with ML models.<br>
-      📱 <strong>Interface:</strong> iOS app shows real-time posture status and alerts.
+      We were deeply struck by the fact that pressure ulcers — a condition experienced by many immobile patients — can
+      lead to a mortality rate as high as 70%, despite being preventable.
+      Prevention largely depends on two key actions: <strong>regular postural changes and maintaining an appropriate
+        environment</strong>.
+      However, doing so manually places a <strong>heavy burden on caregivers</strong> and medical staff.
+      Motivated by this, we set out to develop an <strong>automated pressure ulcer prevention system</strong> that can
+      monitor and manage
+      risk factors without constant human intervention.
     </p>
+  </div>
 
-    <br>
+  <hr>
 
+  <!-- 프로젝트 설명 -->
+  <h2>Overview (Detailed)</h2>
+  <div class="section">
     <h3>👤 User Flow</h3>
     <p>
     <ol>
@@ -139,30 +69,34 @@
     <h3>📌 Main Features</h3>
     <ol>
       <li>
-        <strong>1️⃣ Patient Dashboard</strong> with IoT<br>
-        Caregivers view a list of assigned patients, including:
+        <strong>Patient Dashboard & Real-Time Alerts</strong> via IoT<br>
+        Caregivers can monitor a list of assigned patients, including:
         <ul>
-          <li>• Personal info (e.g., age, ID, condition)</li>
-          <li>• Environmental data (recent temperatures/humidity)</li>
+          <li>• <strong>Basic patient information</strong> (e.g., age, ID, condition)</li>
+          <li>• <strong>Environmental data</strong> such as recent temperature and humidity readings</li>
         </ul>
+        The system also sends <strong>instant alerts</strong> based on abnormal sensor data or inactivity.
       </li>
+
       <li>
-        <strong>2️⃣ Next Posture Prediction</strong> with ML<br>
-        When a posture change is manually tagged, the system predicts when the next change is needed.
+        <strong>Posture Change Prediction</strong> powered by ML<br>
+        When a posture change is manually recorded, the system analyzes recent data trends to <strong>predict the
+          optimal timing</strong> for the next change, helping to reduce pressure ulcer risk.
       </li>
+
       <li>
-        <strong>3️⃣ Daily Summary & Risk Alert</strong> with LLM<br>
-        At sleep mode entry, the app analyzes:
+        <strong>Daily Summary Generation</strong> using LLM<br>
+        When the patient enters sleep mode, the app compiles:
         <ul>
-          <li>• Cumulative ambient data</li>
-          <li>• Posture change logs</li>
-          <li>• Risk level (based on inactivity or temperature anomalies)</li>
+          <li>• <strong>Ambient sensor logs</strong></li>
+          <li>• <strong>Posture change activity</strong></li>
+          <li>• <strong>Inactivity risk assessments</strong></li>
         </ul>
-        A push notification is sent in these cases:
+        A natural-language summary is generated and push notifications are sent in cases such as:
         <ul>
-          <li>• Patient is in danger (low mobility or poor condition)</li>
-          <li>• Predicted posture change time is approaching</li>
-          <li>• Daily summary is generated</li>
+          <li>• Detected risk due to low mobility or prolonged pressure</li>
+          <li>• Imminent posture change needed based on prediction</li>
+          <li>• Completion of daily summary report</li>
         </ul>
       </li>
     </ol>
@@ -210,87 +144,166 @@
     <h4>2️⃣ Machine Learning (Random Forest)</h4>
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
       <img src="./attachment/MLcode.png" alt="ML code"
+        style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+
+      <p style="text-align: center; font-size: 1.1em; margin: 1.5em 0;">
+        \[
+        \frac{1}{M} \sum_{i=t-M}^{t} |\Delta T_i| < \varepsilon, \quad \text{with } M=5,\ \varepsilon=0.1^\circ C \]
+          </p>
+    </div>
+    <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
+      <li>A Random Forest model was trained using sensor-derived features, including recent temperature stability
+        patterns, to predict the optimal timing for the next posture change.</li>
+      <li>The concept of "near-high-temperature stability" was used to identify sustained pressure risk conditions
+        based
+        on minimal temperature variation across recent intervals.</li>
+      <li>Model inference is executed in the backend (FastAPI) whenever a new posture is tagged.</li>
+
+      <br>
+      <li style="list-style-type: none; margin-top: 10px;">
+        <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
+          <strong>Why Random Forest?</strong><br>
+          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
+            <img src="./attachment/ML_performance.png" alt="IoT Architecture"
+              style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+
+            <img src="./attachment/ML_graph.png" alt="Sensor Diagram"
+              style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+          </div>
+          To provide personalized predictions for a diverse patient population,
+          we explored alternative models such as LightGBM.
+          However, it exhibited inferior performance in our evaluation compared to Random Forest.
+          Random Forest was ultimately selected due to its strong performance on small-to-medium-sized datasets,
+          robustness to noise, and ability to model non-linear interactions across multiple sensor inputs
+          while minimizing overfitting through its ensemble structure.
+        </div>
+      </li>
+    </ul>
+
+    <br>
+
+    <h4>3️⃣ Daily Summary via LLM</h4>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
+      <img src="./attachment/LLMcode.png" alt="LLM code"
         style="max-width: 70%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
     </div>
 
-    <p style="text-align: center; font-size: 1.1em; margin: 1.5em 0;">
-      \[
-      \frac{1}{M} \sum_{i=t-M}^{t} |\Delta T_i| < \varepsilon, \quad \text{with } M=5,\ \varepsilon=0.1^\circ C \] </p>
+    <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
+      <li>여기 수정하기</li>
 
-        <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
-          <li>A Random Forest model was trained using sensor-derived features, including recent temperature stability
-            patterns, to predict the optimal timing for the next posture change.</li>
-          <li>The concept of "near-high-temperature stability" was used to identify sustained pressure risk conditions
-            based
-            on minimal temperature variation across recent intervals.</li>
-          <li>Model inference is executed in the backend (FastAPI) whenever a new posture is tagged.</li>
+      <br>
+      <li style="list-style-type: none; margin-top: 10px;">
+        <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
+          <strong>Why use an LLM?</strong><br>
+          Even for trained medical professionals,
+          interpreting raw numerical logs alone can be challenging
+          when assessing a patient’s condition.
+          By leveraging a Large Language Model (LLM),
+          we transform structured sensor data into intuitive,
+          human-readable summaries that enhance situational awareness and clinical decision-making.
+        </div>
+      </li>
+    </ul>
 
-          <br>
-          <li style="list-style-type: none; margin-top: 10px;">
-            <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
-              <strong>Why Random Forest?</strong><br>
-              <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
-                <img src="./attachment/ML_performance.png" alt="IoT Architecture"
-                  style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+    <br>
 
-                <img src="./attachment/ML_graph.png" alt="Sensor Diagram"
-                  style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
-              </div>
-              To provide personalized predictions for a diverse patient population,
-              we explored alternative models such as LightGBM.
-              However, it exhibited inferior performance in our evaluation compared to Random Forest.
-              Random Forest was ultimately selected due to its strong performance on small-to-medium-sized datasets,
-              robustness to noise, and ability to model non-linear interactions across multiple sensor inputs
-              while minimizing overfitting through its ensemble structure.
-            </div>
+    <h2>❸ Presentation Link</h2>
+    <div class="section">
+      <ul>
+        <li><a href="./pdf/first.pdf" target="_blank">1️⃣ First Presentation</a></li>
+        <li><a href="./pdf/middle.pdf" target="_blank">2️⃣ Middle Presentation</a></li>
+        <li><a href="./pdf/sogangcontest.pdf" target="_blank">🎉 Sogang Contest Poster</a></li>
+        <li><a href="./pdf/thesis.pdf" target="_blank">📄 KCC Thesis</a></li>
+      </ul>
+    </div>
+
+    <h2>❹ Demo Video</h2>
+    <div class="section">
+      <video controls>
+        <source src="./pdf/demoVideo.mp4" type="video/mp4">
+        현재 브라우저는 비디오 태그를 지원하지 않습니다.
+      </video>
+    </div>
+
+    <!-- 팀 개요 -->
+    <h3><strong>Team</strong></h3>
+    <div class="member-container">
+      <div class="member">
+        <img src="./attachment/jiwon.png" alt="Jiwon Shin" class="member-photo"><br>
+        <strong>Jiwon Shin</strong> (Leader) - IoT & Front<br>
+        <a href="https://github.com/ena-isme" target="_blank"> @ena-isme</a><br>
+        <span class="function-badge">Web</span>
+        <span class="function-badge">Mobile</span>
+        <span class="function-badge">IoT</span>
+        <span class="function-badge">Docs</span>
+      </div>
+
+      <div class="member">
+        <img src="./attachment/jeongyeon.png" alt="Jeongyeon Lim" class="member-photo"><br>
+        <strong>Jeongyeon Lim</strong> - Back<br>
+        <a href="https://github.com/13155a1" target="_blank"> @13155a1</a><br>
+        <span class="function-badge">Server</span>
+        <span class="function-badge">ML</span>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Tech Stack Section -->
+    <div class="section">
+      <ul>
+        <li>🔗 <a href="https://github.com/PU-Track" target="_blank"><strong>GitHub Organization</strong></a></li>
+        <ul style="display: table; margin: 0 auto;">
+          <li><a href="https://github.com/PU-Track/client" target="_blank">Web (User Registration)</a>
+            <br>
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Vite</span>
           </li>
-        </ul>
-
-        <br>
-
-        <h4>3️⃣ Daily Summary via LLM</h4>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
-          <img src="./attachment/LLMcode.png" alt="LLM code"
-            style="max-width: 70%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
-        </div>
-
-        <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
-          <li>여기 수정하기</li>
-
           <br>
-          <li style="list-style-type: none; margin-top: 10px;">
-            <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
-              <strong>Why use an LLM?</strong><br>
-              Even for trained medical professionals,
-              interpreting raw numerical logs alone can be challenging
-              when assessing a patient’s condition.
-              By leveraging a Large Language Model (LLM),
-              we transform structured sensor data into intuitive,
-              human-readable summaries that enhance situational awareness and clinical decision-making.
-            </div>
+          <li><a href="https://github.com/PU-Track/iOS" target="_blank">Mobile (Service App)</a>
+            <br>
+            <span class="tech-badge">Swift</span>
+            <span class="tech-badge">SwiftUI</span>
+            <span class="tech-badge">MQTT</span>
+            <span class="tech-badge">Firebase</span>
           </li>
+          <br>
+          <li><a href="https://github.com/PU-Track/iot" target="_blank">IoT (ESP32 Firmware)</a>
+            <br>
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">ESP32</span>
+            <span class="tech-badge">MQTT</span>
+          </li>
+          <br>
+          <li><a href="https://github.com/PU-Track/server" target="_blank">Backend (API Server)</a>
+            <br>
+            <span class="tech-badge">JavaSpring</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">Firebase Admin SDK</span>
+          </li>
+          <br>
+          <li><a href="https://github.com/PU-Track/model" target="_blank">Model (ML Inference)</a>
+            <br>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">scikit-learn</span>
+            <span class="tech-badge">Random Forest</span>
+          </li>
+          <br>
+          <li><a href="https://github.com/PU-Track/docs" target="_blank">Docs (Documentation)</a>
+            <br>
+            <span class="tech-badge">Markdown</span>
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+          </li>
+          <br>
         </ul>
-
-        <br>
-
-        <h2>❸ Presentation Link</h2>
-        <div class="section">
-          <ul>
-            <li><a href="./pdf/first.pdf" target="_blank">1️⃣ First Presentation</a></li>
-            <li><a href="./pdf/middle.pdf" target="_blank">2️⃣ Middle Presentation</a></li>
-            <li><a href="./pdf/sogangcontest.pdf" target="_blank">🎉 Sogang Contest Poster</a></li>
-            <li><a href="./pdf/thesis.pdf" target="_blank">📄 KCC Thesis</a></li>
-          </ul>
-        </div>
-
-        <h2>❹ Demo Video</h2>
-        <div class="section">
-          <video controls>
-            <source src="./pdf/demoVideo.mp4" type="video/mp4">
-            현재 브라우저는 비디오 태그를 지원하지 않습니다.
-          </video>
-        </div>
-
+        </li>
+      </ul>
+    </div>
 </body>
 
 </html>
