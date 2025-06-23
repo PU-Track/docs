@@ -155,6 +155,25 @@
             <img src="./attachment/ML_graph.png" alt="Sensor Diagram"
               style="max-width: 45%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
           </div>
+          To provide personalized predictions for a diverse patient population,
+          we explored alternative models such as LightGBM.
+          However, it exhibited inferior performance in our evaluation compared to Random Forest.
+          Random Forest was ultimately selected due to its strong performance on small-to-medium-sized datasets,
+          robustness to noise, and ability to model non-linear interactions across multiple sensor inputs
+          while minimizing overfitting through its ensemble structure.
+        </div>
+      </li>
+    </ul>
+
+    <br>
+
+    <h4>3️⃣ Daily Summary via LLM</h4>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
+      <img src="./attachment/LLMcode.png" alt="LLM code"
+        style="max-width: 70%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
+    </div>
+
+    <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
       <li>When a patient transitions to sleep mode, the backend collects sensor logs from the past 24 hours and
         constructs a Korean-language prompt for GPT-4 generation.</li>
       <li>The prompt includes not only today's air and cushion temperature patterns, posture changes, and patient
@@ -167,149 +186,122 @@
         adjustments (e.g., cushion temperature), enhancing proactive care.</li>
       <li>Summaries are generated automatically at sleep transition and optionally stored in Firebase for audit trails
         or integration with electronic medical records (EMRs).</li>
-  </div>
-  </li>
-  </ul>
-
-  <br>
-
-  <h4>3️⃣ Daily Summary via LLM</h4>
-  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 15px 0;">
-    <img src="./attachment/LLMcode.png" alt="LLM code"
-      style="max-width: 70%; min-height: 250px; height: auto; object-fit: contain; border: 0px solid #ccc; border-radius: 6px;">
-  </div>
-
-  <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
-    <li>When a patient transitions to sleep mode, the backend collects sensor logs from the past 24 hours and
-      constructs a Korean-language prompt for GPT-4 generation.
-      The prompt includes not only today's air and cushion temperature patterns, posture changes, and patient
-      metadata, but also comparative trends from the previous week.
-      GPT-4 generates a daily summary in fluent Korean, integrating medical insights, behavioral patterns, and
-      suggested actions to improve the patient's condition.
-      The result is displayed in natural language within the iOS caregiver app, helping caregivers make informed
-      decisions without interpreting raw sensor data.
-      Each summary includes personalized guidance such as recommended posture change timing or environmental
-      adjustments (e.g., cushion temperature), enhancing proactive care.
-      Summaries are generated automatically at sleep transition and optionally stored in Firebase for audit trails
-      or integration with electronic medical records (EMRs).</li>
-    <br>
-    <li style="list-style-type: none; margin-top: 10px;">
-      <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
-        <strong>Why use an LLM?</strong><br>
-        Even for trained medical professionals,
-        interpreting raw numerical logs alone can be challenging
-        when assessing a patient’s condition.
-        By leveraging a Large Language Model (LLM),
-        we transform structured sensor data into intuitive,
-        human-readable summaries that enhance situational awareness and clinical decision-making.
-      </div>
-    </li>
-  </ul>
-
-  <h4>3️⃣ E</h4>
-
-  <hr>
-
-  <h2>2. Demo Video</h2>
-  <div class="section">
-    <video controls>
-      <source src="./pdf/demoVideo.mp4" type="video/mp4">
-      현재 브라우저는 비디오 태그를 지원하지 않습니다.
-    </video>
-  </div>
-
-  <hr>
-
-  <!-- Tech Stack Section -->
-
-  <h2><strong>3. Link</strong></h2>
-  <div class="section">
-    <ul>
-      <li><a href="./pdf/first.pdf" target="_blank">📢 First Presentation</a></li>
-      <li><a href="./pdf/middle.pdf" target="_blank">📢 Middle Presentation</a></li>
-      <li><a href="./pdf/middle.pdf" target="_blank">📢 Final Presentation</a></li>
-      <li><a href="./pdf/sogangcontest.pdf" target="_blank">🎉 Sogang Contest Poster</a></li>
-      <li><a href="./pdf/thesis.pdf" target="_blank">📄 KCC Thesis</a></li>
-    </ul>
-  </div>
-  <hr>
-  <div class="section">
-    <ul>
-      <li>🔗 <a href="https://github.com/PU-Track" target="_blank"><strong>GitHub Organization</strong></a></li><br>
-      <ul>
-        <li>🖇️ <a href="https://github.com/PU-Track/client" target="_blank">Web (User Registration)</a>
-          <br>
-          <span class="tech-badge">HTML</span>
-          <span class="tech-badge">CSS</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">Vite</span>
-        </li>
-        <br>
-        <li>🖇️ <a href="https://github.com/PU-Track/iOS" target="_blank">Mobile (Service App)</a>
-          <br>
-          <span class="tech-badge">Swift</span>
-          <span class="tech-badge">SwiftUI</span>
-          <span class="tech-badge">MQTT</span>
-          <span class="tech-badge">Firebase</span>
-        </li>
-        <br>
-        <li>🖇️ <a href="https://github.com/PU-Track/iot" target="_blank">IoT (ESP32 Firmware)</a>
-          <br>
-          <span class="tech-badge">C++</span>
-          <span class="tech-badge">ESP32</span>
-          <span class="tech-badge">MQTT</span>
-        </li>
-        <br>
-        <li>🖇️<a href="https://github.com/PU-Track/server" target="_blank">Backend (API Server)</a>
-          <br>
-          <span class="tech-badge">JavaSpring</span>
-          <span class="tech-badge">Docker</span>
-          <span class="tech-badge">FastAPI</span>
-          <span class="tech-badge">Firebase Admin SDK</span>
-        </li>
-        <br>
-        <li>🖇️ <a href="https://github.com/PU-Track/model" target="_blank">Model (ML Inference)</a>
-          <br>
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">Docker</span>
-          <span class="tech-badge">scikit-learn</span>
-          <span class="tech-badge">Random Forest</span>
-        </li>
-        <br>
-        <li>🖇️ <a href="https://github.com/PU-Track/docs" target="_blank">Docs (Documentation)</a>
-          <br>
-          <span class="tech-badge">Markdown</span>
-          <span class="tech-badge">HTML</span>
-          <span class="tech-badge">CSS</span>
-        </li>
-        <br>
-      </ul>
+      <br>
+      <li style="list-style-type: none; margin-top: 10px;">
+        <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
+          <strong>Why use an LLM?</strong><br>
+          Even for trained medical professionals,
+          interpreting raw numerical logs alone can be challenging
+          when assessing a patient’s condition.
+          By leveraging a Large Language Model (LLM),
+          we transform structured sensor data into intuitive,
+          human-readable summaries that enhance situational awareness and clinical decision-making.
+        </div>
       </li>
     </ul>
-  </div>
+    
+    <hr>
 
-  <hr>
-
-  <h2><strong>4. Team</strong></h2>
-  <div class="member-container">
-    <div class="member">
-      <img src="./attachment/jiwon.png" alt="Jiwon Shin" class="member-photo"><br>
-      <strong>Jiwon Shin</strong> (Leader) - IoT & Front<br>
-      <a href="https://github.com/ena-isme" target="_blank"> @ena-isme</a><br>
-      <span class="function-badge">Web</span>
-      <span class="function-badge">Mobile</span>
-      <span class="function-badge">IoT</span>
-      <span class="function-badge">Docs</span>
+    <h2>2. Demo Video</h2>
+    <div class="section">
+      <video controls>
+        <source src="./pdf/demoVideo.mp4" type="video/mp4">
+        현재 브라우저는 비디오 태그를 지원하지 않습니다.
+      </video>
     </div>
 
-    <div class="member">
-      <img src="./attachment/jeongyeon.png" alt="Jeongyeon Lim" class="member-photo"><br>
-      <strong>Jeongyeon Lim</strong> - Back<br>
-      <a href="https://github.com/13155a1" target="_blank"> @13155a1</a><br>
-      <span class="function-badge">Server</span>
-      <span class="function-badge">ML</span>
+    <hr>
+
+    <!-- Tech Stack Section -->
+
+    <h2><strong>3. Link</strong></h2>
+    <div class="section">
+      <ul>
+        <li><a href="./pdf/first.pdf" target="_blank">📢 First Presentation</a></li>
+        <li><a href="./pdf/middle.pdf" target="_blank">📢 Middle Presentation</a></li>
+        <li><a href="./pdf/middle.pdf" target="_blank">📢 Final Presentation</a></li>
+        <li><a href="./pdf/sogangcontest.pdf" target="_blank">🎉 Sogang Contest Poster</a></li>
+        <li><a href="./pdf/thesis.pdf" target="_blank">📄 KCC Thesis</a></li>
+      </ul>
     </div>
-  </div>
+    <hr>
+    <div class="section">
+      <ul>
+        <li>🔗 <a href="https://github.com/PU-Track" target="_blank"><strong>GitHub Organization</strong></a></li><br>
+        <ul>
+          <li>🖇️ <a href="https://github.com/PU-Track/client" target="_blank">Web (User Registration)</a>
+            <br>
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Vite</span>
+          </li>
+          <br>
+          <li>🖇️ <a href="https://github.com/PU-Track/iOS" target="_blank">Mobile (Service App)</a>
+            <br>
+            <span class="tech-badge">Swift</span>
+            <span class="tech-badge">SwiftUI</span>
+            <span class="tech-badge">MQTT</span>
+            <span class="tech-badge">Firebase</span>
+          </li>
+          <br>
+          <li>🖇️ <a href="https://github.com/PU-Track/iot" target="_blank">IoT (ESP32 Firmware)</a>
+            <br>
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">ESP32</span>
+            <span class="tech-badge">MQTT</span>
+          </li>
+          <br>
+          <li>🖇️<a href="https://github.com/PU-Track/server" target="_blank">Backend (API Server)</a>
+            <br>
+            <span class="tech-badge">JavaSpring</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">Firebase Admin SDK</span>
+          </li>
+          <br>
+          <li>🖇️ <a href="https://github.com/PU-Track/model" target="_blank">Model (ML Inference)</a>
+            <br>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">scikit-learn</span>
+            <span class="tech-badge">Random Forest</span>
+          </li>
+          <br>
+          <li>🖇️ <a href="https://github.com/PU-Track/docs" target="_blank">Docs (Documentation)</a>
+            <br>
+            <span class="tech-badge">Markdown</span>
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+          </li>
+          <br>
+        </ul>
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <h2><strong>4. Team</strong></h2>
+    <div class="member-container">
+      <div class="member">
+        <img src="./attachment/jiwon.png" alt="Jiwon Shin" class="member-photo"><br>
+        <strong>Jiwon Shin</strong> (Leader) - IoT & Front<br>
+        <a href="https://github.com/ena-isme" target="_blank"> @ena-isme</a><br>
+        <span class="function-badge">Web</span>
+        <span class="function-badge">Mobile</span>
+        <span class="function-badge">IoT</span>
+        <span class="function-badge">Docs</span>
+      </div>
+
+      <div class="member">
+        <img src="./attachment/jeongyeon.png" alt="Jeongyeon Lim" class="member-photo"><br>
+        <strong>Jeongyeon Lim</strong> - Back<br>
+        <a href="https://github.com/13155a1" target="_blank"> @13155a1</a><br>
+        <span class="function-badge">Server</span>
+        <span class="function-badge">ML</span>
+      </div>
+    </div>
 
 </body>
 
