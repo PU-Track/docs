@@ -189,8 +189,18 @@
     </div>
 
     <ul style="padding-left: 1.5em; list-style-type: disc; font-size: 1em; line-height: 1.8;">
-      <li>여기 수정하기</li>
-
+      <li>When a patient transitions to sleep mode, the backend collects sensor logs from the past 24 hours and
+        constructs a Korean-language prompt for GPT-4 generation.
+        The prompt includes not only today's air and cushion temperature patterns, posture changes, and patient
+        metadata, but also comparative trends from the previous week.
+        GPT-4 generates a daily summary in fluent Korean, integrating medical insights, behavioral patterns, and
+        suggested actions to improve the patient's condition.
+        The result is displayed in natural language within the iOS caregiver app, helping caregivers make informed
+        decisions without interpreting raw sensor data.
+        Each summary includes personalized guidance such as recommended posture change timing or environmental
+        adjustments (e.g., cushion temperature), enhancing proactive care.
+        Summaries are generated automatically at sleep transition and optionally stored in Firebase for audit trails
+        or integration with electronic medical records (EMRs).</li>
       <br>
       <li style="list-style-type: none; margin-top: 10px;">
         <div style="border: 1px solid #ccc; background-color: #f0f4ff; padding: 12px 15px; border-radius: 10px;">
@@ -222,11 +232,11 @@
     <h2><strong>3. Link</strong></h2>
     <div class="section">
       <ul>
-        <li><a href="./pdf/first.pdf" target="_blank">📢  First Presentation</a></li>
-        <li><a href="./pdf/middle.pdf" target="_blank">📢  Middle Presentation</a></li>
-        <li><a href="./pdf/middle.pdf" target="_blank">📢  Final Presentation</a></li>
-        <li><a href="./pdf/sogangcontest.pdf" target="_blank">🎉  Sogang Contest Poster</a></li>
-        <li><a href="./pdf/thesis.pdf" target="_blank">📄  KCC Thesis</a></li>
+        <li><a href="./pdf/first.pdf" target="_blank">📢 First Presentation</a></li>
+        <li><a href="./pdf/middle.pdf" target="_blank">📢 Middle Presentation</a></li>
+        <li><a href="./pdf/middle.pdf" target="_blank">📢 Final Presentation</a></li>
+        <li><a href="./pdf/sogangcontest.pdf" target="_blank">🎉 Sogang Contest Poster</a></li>
+        <li><a href="./pdf/thesis.pdf" target="_blank">📄 KCC Thesis</a></li>
       </ul>
     </div>
     <hr>
